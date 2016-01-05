@@ -1,13 +1,15 @@
 require "byebug"
+require_relative 'player'
+require 'set'
 
 class Game
 
-  def initialize (player1, player2)
+  def initialize (*players)
+    @players = players
     @fragment = ""
-    debugger
-    @dictionary = File.readlines("ghost-dictionary.txt")
-    @dictionary.each do |word|
-      word.chomp!
+    @dictionary = Set.new
+    File.foreach("ghost-dictionary.txt") do |line|
+      @dictionary << line.chomp
     end
   end
 
@@ -17,6 +19,19 @@ class Game
 
   private
 
-  def 
+  def current_player
+  end
+
+  def previous_player
+  end
+
+  def next_player!
+  end
+
+  def take_turn(player)
+  end
+
+  def valid_play?(string)
+  end
 
 end
