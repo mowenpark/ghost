@@ -12,10 +12,4 @@ class Player
 
   end
 
-  def valid_guess?(guess)
-    
-
-
-  end
-
 end
